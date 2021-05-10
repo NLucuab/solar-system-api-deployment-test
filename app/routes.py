@@ -3,7 +3,7 @@ from app import db
 from flask import Blueprint, request, jsonify
 from app.models.planet import Planet
 
-planets_bp = Blueprint("planets", __name__, url_prefix="/planets")
+planets_bp = Blueprint("planets", __name__, url_prefix="/planetsdeploy")
 
 @planets_bp.route("", methods=["POST"], strict_slashes=False)
 # Creates a planet object using provided request body information
