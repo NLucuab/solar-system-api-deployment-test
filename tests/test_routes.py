@@ -1,6 +1,6 @@
 def test_create_one_planet(client):
     # Act
-    response = client.post("/planets", json={
+    response = client.post("/planetsdeploy", json={
         "name": "ZigZag",
         "description": "A ziggy zaggy planet",
         "size": "Large"
@@ -14,7 +14,7 @@ def test_create_one_planet(client):
 
 def test_get_one_planet(client, two_saved_planets):
     # Act
-    response = client.get("/planets/1")
+    response = client.get("/planetsdeploy/1")
     response_body = response.get_json()
 
     # Assert
@@ -23,7 +23,7 @@ def test_get_one_planet(client, two_saved_planets):
 
 def test_get_planet_by_name(client, two_saved_planets):
     # Act
-    response = client.get("/planets", query_string={"name": "Swirly Planet"})
+    response = client.get("/planetsdeploy", query_string={"name": "Swirly Planet"})
     response_body = response.get_json()
 
     # Assert
